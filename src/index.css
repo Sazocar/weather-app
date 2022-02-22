@@ -21,13 +21,6 @@
     --lg: 18px
 }
 
-body {
-    margin: 0;
-}
-
-.logo {
-    width: 500px;
-}
 
 .logo p {
     font-family: 'Asap Condensed', sans-serif;
@@ -38,6 +31,7 @@ body {
 }
 
 .header-container {
+    width: 100%;
     align-items: center;
 }
 
@@ -54,9 +48,10 @@ body {
 }
 
 .header-info li a {
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Prompt', sans-serif;
     font-weight: 500;
     color: #306cbb;
+    font-size: var(--md);
 }
 
 .header-info li img {
@@ -64,4 +59,77 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 60px;
+}
+
+/* Input */
+
+
+/* From cssbuttons.io by @aasisodiya */
+.input-button {
+ background-color: #eee;
+ border: none;
+ padding: 1rem;
+ font-size: 1rem;
+ width: 10em;
+ border-radius: 1rem;
+ color: #306cbb;
+ box-shadow: 0 0.4rem #dfd9d9;
+ cursor: pointer;
+}
+
+.input-button:active {
+ color: white;
+ box-shadow: 0 0.2rem #dfd9d9;
+ transform: translateY(0.2rem);
+}
+
+.input-button:hover:not(:disabled) {
+ background: #306cbb;
+ color: white;
+ text-shadow: 0 0.1rem #bcb4b4;
+}
+
+.input-button:disabled {
+ cursor: auto;
+ color: grey;
+}
+
+@media (max-width: 800px) {    
+    .container {
+        margin: 5px 5px;
+        padding: 12px 0px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-info li {
+        width: 100px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 370px) {
+    .logo p {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header-info li {
+        width: 100px;
+    }
+
+    .header-info li a {
+        font-size: 12px;
+    }
+
+    .header-info li a img {
+        width: 40px;
+    }
 }
