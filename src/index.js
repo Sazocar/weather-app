@@ -2,7 +2,7 @@ import { getLatAndLon } from "./utils";
 
 
 
-const city = 'Caracas';   // Se la tengo que pedir al usuario y pasar como argumento
+const city = 'Barcelona';   // Se la tengo que pedir al usuario y pasar como argumento
 const baseUrl = 'https://api.openweathermap.org/'
 const apiKey = '82140789032cc753d85a5d358bce5b17';
 const es = 'es';
@@ -33,6 +33,7 @@ info.then(value => {
 
             // Now we create HTML elements for weather card
             const card = document.createElement('div');
+            card.id = id;
             card.className = 'card';
 
             const city_name = document.createElement('h2');
@@ -56,8 +57,6 @@ info.then(value => {
             card.append(city_name, country_name, close, temp, weather_icon, description);
             
             cards_container.append(card);
-        })
-
-
+        });
 });
    
