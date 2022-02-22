@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="https://img.icons8.com/color/96/000000/partly-cloudy-day--v1.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
-      name="description"
-      content="Web site created using create-snowpack-app"
+      name="Weather"
+      content="Web app that shows weather stats using Current Weather Data from openweathermap API. Web site created using snowpack and tailwind. By Simón A. Azócar"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;700&family=Exo+2:wght@100;200;400;500;700&family=Prompt:wght@100;300;500;700&display=swap"
+      rel="stylesheet">
     <!--
       Snowpack will replace %PUBLIC_URL% with the value you have for `baseUrl` in `snowpack.config.js`.
       Make sure to update it with your GitHub Page URL. https://<your-username>.github.io/<your-repo-name>
@@ -20,7 +25,7 @@
       type="text/css"
       href="%PUBLIC_URL%/_dist_/index.css"
     />
-    <title>Snowpack & Tailwind App</title>
+    <title>Weather App | Simón A. Azócar</title>
   </head>
   <body>
     <!--
@@ -32,53 +37,19 @@
       Start modyfing from here.
     -->
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p
-          class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase"
-        >
-          Snowpack
-        </p>
-        <h3
-          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-        >
-          Tailwind template
-        </h3>
-        <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 mx-auto">
-          Use this template to build awesome websites using Snowpack and
-          Tailwind. It also includes Prettier and automatic publish to GitHub
-          pages using GitHub Actions. Learn more:
-        </p>
-        <ul
-          class="text-xl leading-7 sm:flex justify-around sm:max-w-2xl sm:mx-auto mt-10"
-        >
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://snowpack.dev" target="_blank">snowpack.dev</a>
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://tailwindcss.com" target="_blank"
-              >tailwindcss.com</a
-            >
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a
-              href="https://docs.github.com/en/free-pro-team@latest/actions"
-              target="_blank"
-              >GitHub Actions</a
-            >
-          </li>
-        </ul>
-        <p class="mt-14 text-xl leading-7 text-gray-500">Start using it:</p>
-        <div class="my-5 bg-gray-800 p-5 text-white">
-          <code>
-            npx create-snowpack-app my-app --template snowpack-template-tailwind
-          </code>
+      <header class="header-container flex flex-none content-center justify-between">
+        <div class="logo flex flex-none ">
+          <p class="mb-3" >Weather App</p> <img class="ml-2" src="https://img.icons8.com/color/96/000000/rain--v1.png" />
         </div>
-        <p class="mt-16 text-xl leading-7 text-gray-500 underline">
-          <a href="https://github.com/jonalvarezz/snowpack-template-tailwind"
-            >See on GitHub</a
-          >
-        </p>
-      </div>
+
+        <ul class="header-info flex flex-none">
+          <li class="mx-2"><a target="_blank" href="https://openweathermap.org/api"><img
+            src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-api-window-ui-elements-and-conditions-flat-icons-inmotus-design.png"/>Open Weather Map API</a></li>
+          <li class="mx-2"><a target="_blank" href="https://sazocar.github.io/profile-card/"><img
+            src="https://img.icons8.com/external-flat-juicy-fish/60/000000/external-contact-contact-us-flat-flat-juicy-fish.png" />About Me</a></li>
+          <li class="mx-2"><a target="_blank" href=""><img src="https://img.icons8.com/glyph-neue/64/000000/github.png" />Github Repository</a></li>
+        </ul>
+      </header>
     </div>
 
     <!-- Add more scripts here -->

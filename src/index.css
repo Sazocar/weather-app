@@ -1,3 +1,67 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+
+/* Fonts avalaibles 
+    font-family: 'Asap Condensed', sans-serif;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Prompt', sans-serif;
+*/
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --title: #306cbb;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --dark: #232830;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px
+}
+
+body {
+    margin: 0;
+}
+
+.logo {
+    width: 500px;
+}
+
+.logo p {
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--title);
+    align-self: center;
+}
+
+.header-container {
+    align-items: center;
+}
+
+.header-info li {
+    display: grid;
+    place-items: center;
+    width: 120px;
+    text-align: center;
+}
+
+.header-info li:hover {
+    border-radius: 5px;
+    background-color: #cfcfcf;
+}
+
+.header-info li a {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    color: #306cbb;
+}
+
+.header-info li img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+}
