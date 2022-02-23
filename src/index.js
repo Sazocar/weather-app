@@ -1,15 +1,32 @@
+// import { getUserInput } from "./utils";
 
-const city = 'Paris';   // Se la tengo que pedir al usuario y pasar como argumento
+import { check } from "prettier";
+
 const baseUrl = 'https://api.openweathermap.org/'
 const apiKey = '82140789032cc753d85a5d358bce5b17';
 const es = 'es';
 const unit = 'metric';
-const weatherAPI = `${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&lang=${es}&units=${unit}`
 
 const cards_container = document.querySelector('.cards-container');
+const checkWeatherButton = document.querySelector('.input-button');
+
+const getUserInput = () => {
+    const inputRef = document.querySelector('.user-input');
+    return inputRef.value;    
+};
+
+let city;
+
+checkWeatherButton.addEventListener('click', () => {
+    city = getUserInput();
+});
 
 
-window.fetch(weatherAPI)
+
+
+const addWeatherCard = () => {
+    let  weatherAPI = `${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&lang=${es}&units=${unit}`
+    window.fetch(weatherAPI)
     .then(response => response.json())
     .then(jsonResponse => {
         const weatherData = jsonResponse;
@@ -21,6 +38,7 @@ window.fetch(weatherAPI)
         const card = document.createElement('div');
         card.id = id;
         card.className = 'card w-56 h-72 rounded-lg px-6 pb-8';
+        // card.className = 'card md:flex bg-gray-800 rounded-lg p-6 hover:bg-gray-600';
 
         const city_name = document.createElement('h2');
         city_name.textContent = name;
@@ -49,7 +67,10 @@ window.fetch(weatherAPI)
         card.append(city_name, close, temp, weather_icon, description);
         
         city_name.appendChild(country_name);
-
+        
         cards_container.append(card);
-        // cards_container.className = 'mt-10 grid grid-cols-1 md:grid-cols-3 gap-4';
-    });   
+    });  
+    // cards_container.className = 'mt-10 grid grid-cols-1 md:grid-cols-3 gap-4';
+}; 
+
+checkWeatherButton.addEventListener('click', addWeatherCard);
