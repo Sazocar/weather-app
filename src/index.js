@@ -70,7 +70,6 @@ const addWeatherCard = () => {
         
         cards_container.append(card);
     });  
-    // cards_container.className = 'mt-10 grid grid-cols-1 md:grid-cols-3 gap-4';
 }; 
 
 checkWeatherButton.addEventListener('click', addWeatherCard);
