@@ -4,6 +4,7 @@
 
 /* Fonts avalaibles 
     font-family: 'Asap Condensed', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-family: 'Exo 2', sans-serif;
     font-family: 'Prompt', sans-serif;
 */
@@ -11,7 +12,7 @@
 :root {
     --white: #FFFFFF;
     --black: #000000;
-    --title: #306cbb;
+    --title: #2364af;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
@@ -21,6 +22,9 @@
     --lg: 18px
 }
 
+body {
+    background-color: #F7F7F7;
+}
 
 .logo p {
     font-family: 'Asap Condensed', sans-serif;
@@ -69,10 +73,12 @@
  background-color: #eee;
  border: none;
  padding: 1rem;
- font-size: 1rem;
- width: 10em;
+ font-size: 24px;
+ font-family: 'Asap Condensed', sans-serif;
+ font-weight: 600;
+ width: 200px;
  border-radius: 1rem;
- color: #306cbb;
+ color: #1C658C;
  box-shadow: 0 0.4rem #dfd9d9;
  cursor: pointer;
 }
@@ -84,15 +90,79 @@
 }
 
 .input-button:hover:not(:disabled) {
- background: #306cbb;
+ background: #1C658C;
  color: white;
- text-shadow: 0 0.1rem #bcb4b4;
 }
 
 .input-button:disabled {
  cursor: auto;
  color: grey;
 }
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.card {
+    background-color: #4dbcfd;
+    background-image: linear-gradient(163deg, #4dbcfd 0%, #185475 100%);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+}
+
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: scale(1.05);
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.city {
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.tempeture {
+    font-family: 'Barlow', sans-serif;
+}
+
+.description {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.card h2 span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.input-container {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.input-container input {
+    margin-right: 4px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #dbdbdb;
+    outline: none;
+    padding: 0 18px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.input-container input::placeholder {
+    color: #8f8f8f;
+}
+
 
 @media (max-width: 800px) {    
     .container {
@@ -131,5 +201,23 @@
 
     .header-info li a img {
         width: 40px;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;  
+        margin-top: 40px;
+    }
+    
+    .input-container input {
+        margin-bottom: 8px;
+        height: 50px;
+        width: 220px;
+        padding-left: 0;
+    }
+
+    .input-container input::placeholder {
+        text-align: center;
     }
 }

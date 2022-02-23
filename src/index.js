@@ -1,62 +1,55 @@
-import { getLatAndLon } from "./utils";
 
-
-
-const city = 'Barcelona';   // Se la tengo que pedir al usuario y pasar como argumento
+const city = 'Paris';   // Se la tengo que pedir al usuario y pasar como argumento
 const baseUrl = 'https://api.openweathermap.org/'
 const apiKey = '82140789032cc753d85a5d358bce5b17';
 const es = 'es';
 const unit = 'metric';
+const weatherAPI = `${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&lang=${es}&units=${unit}`
 
 const cards_container = document.querySelector('.cards-container');
 
-let info = getLatAndLon(city);
 
-info.then(value => {
-    // We get latitude and longited from getLatAndLon function
+window.fetch(weatherAPI)
+    .then(response => response.json())
+    .then(jsonResponse => {
+        const weatherData = jsonResponse;
 
-    const latitude = value.lat;
-    const longitude = value.lon;
-    console.log(latitude, longitude);
-    
-    // Generate the weatherAPI using latitud and longitud
-    const weatherAPI = `${baseUrl}data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&lang=${es}&units=${unit}`
+        const {name, sys, main, weather, id} = weatherData;
+        console.log(`${name}, ${sys.country}, ${main.temp}°C, ${weather[0].description}, ${weather[0].icon}, ${id}`);
 
+        // Now we create HTML elements for weather card
+        const card = document.createElement('div');
+        card.id = id;
+        card.className = 'card w-56 h-72 rounded-lg px-6 pb-8';
 
-    window.fetch(weatherAPI)
-        .then(response => response.json())
-        .then(jsonResponse => {
-            const weatherData = jsonResponse;
-    
-            const {name, sys, main, weather, id} = weatherData;
-            console.log(`${name}, ${sys.country}, ${main.temp}°C, ${weather[0].description}, ${weather[0].icon}, ${id}`);
+        const city_name = document.createElement('h2');
+        city_name.textContent = name;
+        city_name.className = 'city w-32 text-purple-50 mb-4 text-3xl font-bold pt-8';
 
-            // Now we create HTML elements for weather card
-            const card = document.createElement('div');
-            card.id = id;
-            card.className = 'card';
+        const country_name = document.createElement('span');
+        country_name.textContent = sys.country;
+        country_name.className = 'w-8 mt-7 bg-yellow-400 text-black font-bold text-center text-sm rounded-lg';
 
-            const city_name = document.createElement('h2');
-            city_name.textContent = name;
+        const close = document.createElement('img');
+        close.src = 'https://img.icons8.com/plumpy/24/000000/macos-close.png';
+        close.className = 'close absolute inset-y-0 right-1 mt-3 mr-2';
 
-            const country_name = document.createElement('span');
-            country_name.textContent = sys.country;
+        const temp = document.createElement('h1');
+        temp.textContent = parseInt(main.temp) + '°C';
+        temp.className = 'tempeture text-white text-center text-7xl font-light';
 
-            const close = document.createElement('img');
-            close.src = '' // PENDIENTE POR HACER !!!!!!!! -----------------------------
-            close.className = 'w-4'
-            const temp = document.createElement('h1');
-            temp.textContent = main.temp;
+        const weather_icon = document.createElement('img');
+        weather_icon.src = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+        weather_icon.className = 'mx-auto h-20';
 
-            const weather_icon = document.createElement('img');
-            weather_icon.src = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+        const description = document.createElement('p');
+        description.textContent = weather[0].description;
+        description.className = 'description capitalize font-light text-center text-white';
 
-            const description = document.createElement('p');
-            description.textContent = weather[0].description;
+        card.append(city_name, close, temp, weather_icon, description);
+        
+        city_name.appendChild(country_name);
 
-            card.append(city_name, country_name, close, temp, weather_icon, description);
-            
-            cards_container.append(card);
-        });
-});
-   
+        cards_container.append(card);
+        // cards_container.className = 'mt-10 grid grid-cols-1 md:grid-cols-3 gap-4';
+    });   
