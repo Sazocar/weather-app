@@ -1,6 +1,4 @@
-// import { getUserInput } from "./utils";
 
-import { check } from "prettier";
 
 const baseUrl = 'https://api.openweathermap.org/'
 const apiKey = '82140789032cc753d85a5d358bce5b17';
@@ -9,6 +7,7 @@ const unit = 'metric';
 
 const cards_container = document.querySelector('.cards-container');
 const checkWeatherButton = document.querySelector('.input-button');
+const cityInput = document.querySelector('.user-input');
 
 const getUserInput = () => {
     const inputRef = document.querySelector('.user-input');
@@ -19,8 +18,16 @@ let city;
 
 checkWeatherButton.addEventListener('click', () => {
     city = getUserInput();
+    cityInput.value = '';
 });
 
+cityInput.addEventListener('keydown', (e) =>{
+    if (e.code === 'Enter') {
+        city = getUserInput();
+        addWeatherCard();
+        cityInput.value = '';
+    }
+});
 
 
 
