@@ -1,13 +1,14 @@
-
+import { deleteAllCards } from "./utils";
 
 const baseUrl = 'https://api.openweathermap.org/'
 const apiKey = '82140789032cc753d85a5d358bce5b17';
 const es = 'es';
 const unit = 'metric';
 
-const cards_container = document.querySelector('.cards-container');
+export const cards_container = document.querySelector('.cards-container');
 const checkWeatherButton = document.querySelector('.input-button');
 const cityInput = document.querySelector('.user-input');
+const deleteButton = document.querySelector('.delete-button');
 
 const getUserInput = () => {
     const inputRef = document.querySelector('.user-input');
@@ -29,6 +30,7 @@ cityInput.addEventListener('keydown', (e) =>{
     }
 });
 
+deleteButton.addEventListener('click', deleteAllCards);
 
 
 const addWeatherCard = () => {
