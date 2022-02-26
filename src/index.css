@@ -22,6 +22,11 @@
     --lg: 18px
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #F7F7F7;
 }
@@ -236,10 +241,10 @@ body {
 }
 
 @media (max-width: 800px) {    
-    .container {
+    /* .container {
         margin: 5px 5px;
         padding: 12px 0px;
-    }
+    } */
 
     .cards-container {
         grid-template-columns: auto auto;
