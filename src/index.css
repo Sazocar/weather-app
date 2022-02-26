@@ -285,6 +285,9 @@ body {
         padding-right: 0;
         text-align: center;
     }
+    .bad-input::placeholder{
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 370px) {
@@ -308,4 +311,5 @@ body {
     .header-info li a img {
         width: 40px;
     }
+    
 }
