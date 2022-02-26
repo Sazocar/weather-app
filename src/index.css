@@ -176,8 +176,13 @@ body {
     font-weight: 300;
 }
 
-.input-container input::placeholder {
-    color: #8f8f8f;
+.bad-input {
+    border: 1px solid red;
+}
+
+.bad-input::placeholder {
+    font-weight: 300;
+    color: red;
 }
 
 .delete-container {

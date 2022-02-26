@@ -1,7 +1,6 @@
 // Here I'll write the code to return lat and lon whenever user enters a city in input
 
-import { cards_container } from ".";
-
+import { cards, cards_container } from ".";
 // Making use of Geocoding API
 
 
@@ -23,8 +22,8 @@ export const getLatAndLon = async (userCity) => {
 };
 
 export const deleteAllCards = () => {
-    while (cards_container.firstChild) {
+    while ((cards_container.firstChild) && (cards.length > 0)) {
         cards_container.removeChild(cards_container.firstChild);
+        cards.pop();
     }
 };
-
