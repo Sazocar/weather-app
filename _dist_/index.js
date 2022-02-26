@@ -104,7 +104,7 @@ checkWeatherButton.addEventListener('click', addWeatherCard);
 
 
 const deleteCard = (event) => {
-    if (event.target.nodeName === 'IMG') {
+    if ((event.target.nodeName === 'IMG') && event.target.classList[0] == 'close'){
         const card_id = event.target.offsetParent.id;
         const cardRef = document.getElementById(card_id);
         const index = cards.indexOf(card_id);
