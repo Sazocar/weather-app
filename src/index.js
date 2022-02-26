@@ -92,8 +92,13 @@ const addWeatherCard = () => {
             cityInput.placeholder = 'Enter a city or country';
             cards.push(id);
         }
-    });  
-}; 
+    })  
+    .catch(() =>{
+        cityInput.classList.add('bad-input');
+        cityInput.placeholder = 'Location not valid, try again';
+        cityInput.value = '';
+    });
+};
 
 checkWeatherButton.addEventListener('click', addWeatherCard);
 
