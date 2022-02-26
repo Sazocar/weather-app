@@ -1,0 +1,315 @@
+@import "../_snowpack/pkg/tailwindcss/dist/base.css";
+@import "../_snowpack/pkg/tailwindcss/dist/components.css";
+@import "../_snowpack/pkg/tailwindcss/dist/utilities.css";
+
+/* Fonts avalaibles 
+    font-family: 'Asap Condensed', sans-serif;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Prompt', sans-serif;
+*/
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --title: #2364af;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --dark: #232830;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+.logo p {
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--title);
+    align-self: center;
+}
+
+
+.header-container {
+    width: 100%;
+    align-items: center;
+}
+
+.header-info li {
+    display: grid;
+    place-items: center;
+    width: 120px;
+    text-align: center;
+}
+
+.header-info li:hover {
+    border-radius: 5px;
+    background-color: #cfcfcf;
+}
+
+.header-info li a {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    color: #306cbb;
+    font-size: var(--md);
+}
+
+.header-info li img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+}
+
+/* Input */
+
+
+/* From cssbuttons.io by @aasisodiya */
+.input-button {
+ background-color: #eee;
+ border: none;
+ padding: 1rem;
+ font-size: 22px;
+ font-family: 'Asap Condensed', sans-serif;
+ font-weight: 600;
+ width: 200px;
+ border-radius: 1rem;
+ color: #1C658C;
+ box-shadow: 0 0.4rem #dfd9d9;
+ cursor: pointer;
+}
+
+.input-button:active {
+ color: white;
+ box-shadow: 0 0.2rem #dfd9d9;
+ transform: translateY(0.2rem);
+}
+
+.input-button:hover:not(:disabled) {
+ background: #1C658C;
+ color: white;
+}
+
+.input-button:disabled {
+ cursor: auto;
+ color: grey;
+}
+
+.cards-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 67px;
+    /* display: grid;
+    grid-template-columns: auto auto auto auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px; */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #4dbcfd;
+    background-image: linear-gradient(163deg, #4dbcfd 0%, #185475 100%);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    height: 318px;
+}
+
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: scale(1.05);
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.city {
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.tempeture {
+    font-family: 'Barlow', sans-serif;
+}
+
+.description {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.card h2 span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.input-container {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.input-container input {
+    margin-right: 4px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #dbdbdb;
+    outline: none;
+    padding: 0 18px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.bad-input {
+    border: 1px solid red;
+}
+
+.bad-input::placeholder {
+    font-weight: 300;
+    color: red;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* From cssbuttons.io by @hannahyockel */
+.delete-button {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    width: 200px;
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color: rgba(100,77,237,0.08);
+    border-radius: 1.25em;
+    transition: all 0.2s linear;
+}
+
+.delete-button:hover {
+    box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+    8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+    17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+    36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+    99px 72px 143px rgba(0, 0, 0, 0.08);
+}
+
+.delete-button .tooltiptext {
+    visibility: hidden;
+    width: 4em;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 110%;
+}
+
+.delete-button .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+
+.delete-button:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media (max-width: 1100px) {
+    .cards-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 800px) {    
+    /* .container {
+        margin: 5px 5px;
+        padding: 12px 0px;
+    } */
+
+    .cards-container {
+        grid-template-columns: auto auto;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-info li {
+        width: 100px;
+        margin: 0;
+    }
+}
+
+@media (max-width:520px) {
+    .input-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;  
+        margin-top: 40px;
+    }
+    
+    .input-container input {
+        margin-bottom: 8px;
+        height: 50px;
+        width: 220px;
+    }
+    
+    .input-container input, input::placeholder {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+    .bad-input::placeholder{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 370px) {
+    .logo p {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header-info li {
+        width: 100px;
+    }
+
+    .header-info li a {
+        font-size: 12px;
+    }
+
+    .header-info li a img {
+        width: 40px;
+    }
+    
+}
