@@ -262,11 +262,6 @@ body {
 }
 
 @media (max-width:520px) {
-    .cards-container {
-        align-content: space-around;
-        flex-direction: column-reverse;
-    }
-
     .input-container {
         display: flex;
         flex-direction: column; 

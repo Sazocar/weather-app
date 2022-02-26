@@ -77,7 +77,7 @@ const addWeatherCard = () => {
         
         city_name.appendChild(country_name);
         
-        cards_container.append(card);
+        cards_container.insertAdjacentElement('afterbegin', card);
     });  
 }; 
 
