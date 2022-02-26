@@ -55,12 +55,12 @@ const addWeatherCard = () => {
             // Now we create HTML elements for weather card
             const card = document.createElement('div');
             card.id = id;
-            card.className = 'card w-56 h-72 rounded-lg px-6 pb-8';
+            card.className = 'card w-56 h-72 rounded-lg px-6 py-8';
             // card.className = 'card md:flex bg-gray-800 rounded-lg p-6 hover:bg-gray-600';
     
             const city_name = document.createElement('h2');
             city_name.textContent = name;
-            city_name.className = 'city w-32 text-purple-50 mb-4 text-3xl font-bold pt-8';
+            city_name.className = 'city w-32 text-purple-50 text-3xl font-bold';
     
             const country_name = document.createElement('span');
             country_name.textContent = sys.country;
