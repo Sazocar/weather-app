@@ -27,3 +27,4 @@ export const deleteAllCards = () => {
         cards_container.removeChild(cards_container.firstChild);
     }
 };
+

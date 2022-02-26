@@ -82,3 +82,15 @@ const addWeatherCard = () => {
 }; 
 
 checkWeatherButton.addEventListener('click', addWeatherCard);
+
+
+const deleteCard = (event) => {
+    if (event.target.nodeName === 'IMG') {
+        const card_id = event.target.offsetParent.id;
+        const cardRef = document.getElementById(card_id);
+        cards_container.removeChild(cardRef);
+    }
+    
+}
+
+cards_container.addEventListener('click', deleteCard);
