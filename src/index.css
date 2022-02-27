@@ -112,11 +112,6 @@ body {
     justify-content: center;
     gap: 35px;
     margin-top: 67px;
-    /* display: grid;
-    grid-template-columns: auto auto auto auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px; */
 }
 
 .card {
@@ -133,6 +128,7 @@ body {
 .card:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     transform: scale(1.05);
+    transition: all 0.5s ease;
 }
 
 .close:hover {
@@ -251,7 +247,39 @@ body {
     }
 }
 
-@media (max-width:520px) {
+@media (max-width:530px) {
+    .cards-container {
+        gap: 20px;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 375px;
+        height: 135px;
+        padding: 14px 20px;
+    }   
+
+    .card h2 {
+        align-self: start;
+        font-size: 25px;
+    }
+
+    .card h2 span {
+        margin-top: 10px;
+    }
+
+    .tempeture {
+        font-size: 60px;
+    }
+
+    .card:hover {
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+        transform: none;
+        transition: none;
+    }
+
     .input-container {
         display: flex;
         flex-direction: column; 
@@ -275,7 +303,11 @@ body {
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 385px) {
+    .card {
+        width: 315px;
+    }
+    
     .logo p {
         font-size: 2rem;
     }
