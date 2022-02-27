@@ -264,6 +264,7 @@ body {
     .card h2 {
         align-self: start;
         font-size: 25px;
+        line-height: 1em;
     }
 
     .card h2 span {
@@ -304,10 +305,6 @@ body {
 }
 
 @media (max-width: 385px) {
-    .card {
-        width: 315px;
-    }
-    
     .logo p {
         font-size: 2rem;
     }
@@ -320,13 +317,33 @@ body {
     .header-info li {
         width: 100px;
     }
-
+    
     .header-info li a {
         font-size: 12px;
     }
-
+    
     .header-info li a img {
         width: 40px;
     }
     
+    .card {
+        width: 315px;
+    }
+    
+    .card h2 {
+        font-size: 20px;
+        line-height: 1.4em;
+    }
+
+    .card h2 span {
+        left: 90px;
+    }
+
+    .tempeture {
+        font-size: 40px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
 }

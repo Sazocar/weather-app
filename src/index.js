@@ -107,10 +107,11 @@ const deleteCard = (event) => {
     if ((event.target.nodeName === 'IMG') && event.target.classList[0] == 'close'){
         const card_id = event.target.offsetParent.id;
         const cardRef = document.getElementById(card_id);
-        const index = cards.indexOf(card_id);
+        const index = cards.indexOf(parseInt(card_id));
 
         cards.splice(index, 1);
         cards_container.removeChild(cardRef);
+        debugger;
     }
 }
 
