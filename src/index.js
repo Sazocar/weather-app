@@ -76,15 +76,14 @@ const addWeatherCard = () => {
     
             const weather_icon = document.createElement('img');
             weather_icon.src = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
-            weather_icon.className = 'mx-auto h-20';
+            weather_icon.className = 'icon mx-auto h-20';
     
             const description = document.createElement('p');
             description.textContent = weather[0].description;
             description.className = 'description capitalize font-light text-center text-white';
     
-            card.append(city_name, close, temp, weather_icon, description);
-            
             city_name.appendChild(country_name);
+            card.append(city_name, close, temp, weather_icon, description);
             
             cards_container.insertAdjacentElement('afterbegin', card);
 
@@ -111,7 +110,6 @@ const deleteCard = (event) => {
 
         cards.splice(index, 1);
         cards_container.removeChild(cardRef);
-        debugger;
     }
 }
 
