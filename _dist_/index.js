@@ -36,7 +36,7 @@ deleteButton.addEventListener('click', deleteAllCards);
 
 
 const addWeatherCard = () => {
-    let  weatherAPI = `${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&lang=${es}&units=${unit}`
+    let  weatherAPI = `${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`
     window.fetch(weatherAPI)
     .then(response => response.json())
     .then(jsonResponse => {
