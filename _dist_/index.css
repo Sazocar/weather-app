@@ -27,9 +27,12 @@ html, body {
     overflow-x: hidden;
 }
 
+
 body {
     background-color: #F7F7F7;
-    position: relative
+    position: relative;
+		min-height:100vh; 
+		margin:0;
 }
 
 .logo p {
@@ -202,6 +205,7 @@ body {
     border: 1px solid #4dbcfd;
     background-color: rgba(100,77,237,0.08);
     border-radius: 1.25em;
+		margin-bottom: 75px;
 }
 
 .delete-button:hover {
@@ -218,6 +222,17 @@ body {
     z-index: 1;
     top: 25%;
     left: 110%;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #BBDEFB;
+}
+
+footer a {
+	color: #318ecc;
 }
 
 @media (max-width: 1100px) {
@@ -287,7 +302,7 @@ body {
         display: flex;
         flex-direction: column; 
         align-items: center;  
-        margin-top: 40px;
+        margin-top: 20px;
     }
     
     .input-container input {
@@ -336,7 +351,7 @@ body {
     }
     
     .logo p {
-        font-size: 2rem;
+			font-size: 2em;
     }
 
     .logo img {
@@ -359,6 +374,15 @@ body {
     .card {
         width: 290px;
     }
+
+		.input-button {
+			width: 150px;
+			font-size: 16px;
+		}
+
+		footer p {
+			font-size: 12px;
+		}
     
 }
 
@@ -366,6 +390,10 @@ body {
     .card {
         width: 290px;
     }
+
+		.logo p {
+			font-size: 1.9em;
+		}
 }
 
 @media (max-width: 320px) {
