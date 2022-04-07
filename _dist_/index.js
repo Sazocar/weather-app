@@ -12,6 +12,12 @@ const deleteButton = document.querySelector('.delete-button');
 
 export let cards = [];
 
+export const hideDeleteButton = () => {
+	if (cards.length == 0) {
+    deleteButton.style.display = "none";
+  }
+}
+
 const getUserInput = () => {
     const inputRef = document.querySelector('.user-input');
     return inputRef.value;    
@@ -90,6 +96,8 @@ const addWeatherCard = () => {
             cityInput.classList.remove('bad-input');
             cityInput.placeholder = 'Enter a city or country';
             cards.push(id);
+
+						deleteButton.style.display = "flex";
         }
     })  
     .catch(() =>{
@@ -111,6 +119,7 @@ const deleteCard = (event) => {
         cards.splice(index, 1);
         cards_container.removeChild(cardRef);
     }
+		hideDeleteButton();
 }
 
 cards_container.addEventListener('click', deleteCard);
