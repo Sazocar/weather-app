@@ -1,6 +1,6 @@
 // Here I'll write the code to return lat and lon whenever user enters a city in input
 
-import { cards, cards_container } from ".";
+import { cards, cards_container, hideDeleteButton } from ".";
 // Making use of Geocoding API
 
 
@@ -26,4 +26,6 @@ export const deleteAllCards = () => {
         cards_container.removeChild(cards_container.firstChild);
         cards.pop();
     }
+
+		hideDeleteButton();
 };
